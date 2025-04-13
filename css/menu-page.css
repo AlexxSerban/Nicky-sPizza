@@ -351,6 +351,19 @@
     .ingredients-text {
         font-size: 0.9rem;
     }
+    
+    .menu-item {
+        margin-bottom: 25px;
+        padding: 15px;
+    }
+    
+    .menu-item-image {
+        margin-right: 15px;
+    }
+    
+    .menu-content-section {
+        padding: 50px 0;
+    }
 }
 
 @media (max-width: 767px) {
@@ -362,10 +375,117 @@
     .ingredients-text {
         max-width: 100%;
     }
+    
+    .menu-nav-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        padding-bottom: 5px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+    
+    .menu-nav-tabs::-webkit-scrollbar {
+        height: 4px;
+    }
+    
+    .menu-nav-tabs::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 4px;
+    }
+    
+    .menu-nav-tabs a {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+    
+    .menu-item-price {
+        font-size: 1.2rem;
+        margin-top: 5px;
+        color: var(--red);
+    }
 }
 
 @media (max-width: 575px) {
     .section-title p {
         min-height: 350px;
+    }
+    
+    .menu-item-details {
+        padding: 10px 0;
+    }
+    
+    .menu-item-title {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+    
+    .menu-item-description {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+    
+    .add-to-cart {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .menu-page-title {
+        padding: 50px 0 70px;
+    }
+}
+
+@media (max-width: 375px) {
+    .menu-page-title h1 {
+        font-size: 28px;
+    }
+    
+    .menu-page-title p {
+        font-size: 14px;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .section-title h2 {
+        font-size: 24px;
+    }
+    
+    .section-title p {
+        min-height: 380px;
+    }
+    
+    .menu-nav-tabs a {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+    
+    .menu-item-image {
+        height: 90px;
+        min-width: 90px;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .menu-page-title {
+        padding: 30px 0 50px;
+    }
+    
+    .section-title p {
+        min-height: 180px;
+    }
+    
+    .menu-content-section {
+        padding: 30px 0;
+    }
+    
+    .menu-items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .menu-item {
+        margin-bottom: 0;
     }
 } 

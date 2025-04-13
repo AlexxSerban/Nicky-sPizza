@@ -86,10 +86,20 @@ document.addEventListener('DOMContentLoaded', function() {
         // Pentru ecrane mai mici, creștem procentul pentru a mări distanța butoanelor de pizza
         let radiusPercent = 0.28; // Valoarea implicită pentru desktop
         
+        // Optimizare bazată pe dimensiunea reală a viewport-ului
         // Mărește distanța pe ecrane mai mici (tablete și telefoane)
         if (window.innerWidth <= 992) radiusPercent = 0.35;
         if (window.innerWidth <= 768) radiusPercent = 0.40;
         if (window.innerWidth <= 576) radiusPercent = 0.45;
+        
+        // Adăugăm un ajustare specială pentru dispozitive super-mici
+        if (window.innerWidth <= 375) radiusPercent = 0.47;
+        if (window.innerWidth <= 320) radiusPercent = 0.50;
+        
+        // Ajustare pentru orientarea landscape - reducem raza pentru a ține butoanele mai aproape
+        if (window.innerHeight < 500 && window.innerWidth > window.innerHeight) {
+            radiusPercent = 0.35; // Reducem pentru landscape
+        }
         
         // Calculăm raza, dar menținem un maxim pentru ecrane mari
         const radius = Math.min(containerWidth * radiusPercent, 310);
@@ -100,9 +110,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Folosim centrul real al containerului
         const centerY = pizzaSlider.offsetHeight / 2;
         
+        // Determinăm dacă sunt prea multe butoane pentru dispozitive mici
+        // și ajustăm offsetul pentru a evita suprapunerea
+        let angleOffset = 10; // Valoarea implicită
+        
+        // Creștem offsetul pe dispozitive mai mici pentru a evita suprapunerea butoanelor
+        if (window.innerWidth <= 576) angleOffset = 15;
+        if (window.innerWidth <= 375) angleOffset = 20;
+        
         // Distribuie numele uniform pe un cerc complet (360 de grade)
         // Adăugăm un offset pentru a poziționa mai bine primele și ultimele butoane
-        const angleOffset = 10;
         const totalAngle = 360 - (angleOffset * 2);
         const angleStep = totalAngle / pizzaNames.length;
         
@@ -515,8 +532,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Ajustează poziția butonului de săgeată la încărcare
     adjustArrowButtonPosition();
     
-    // Gestionare redimensionare fereastră - repoziționăm numele și aplicăm fade-in
-    window.addEventListener('resize', function() {
+    // Gestionare redimensionare fereastră și orientare - repoziționăm numele și aplicăm fade-in
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleOrientationChange);
+
+    // Funcție comună pentru a gestiona redimensionarea și schimbarea orientării
+    function handleResize() {
         // Ascundem numele înainte de repoziționare
         pizzaNames.forEach(name => {
             name.style.opacity = '0';
@@ -536,15 +557,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 name.style.transition = 'all 0.3s ease';
             });
         }, 50);
-    });
-    
+    }
+
+    // Funcție specifică pentru schimbarea orientării (landscape/portrait)
+    function handleOrientationChange() {
+        // Așteptăm finalizarea schimbării orientării
+        setTimeout(() => {
+            // Reîmprospătăm întregul layout
+            handleResize();
+            
+            // Reîncărcăm imaginea pizzei pentru a evita problemele de redimensionare
+            const currentVariety = pizzaVarieties[currentIndex];
+            if (currentVariety) {
+                const imgSrc = currentVariety.image;
+                // Forțăm reîncărcarea imaginii prin adăugarea unui timestamp
+                pizzaImage.src = `${imgSrc}?t=${Date.now()}`;
+            }
+            
+            // Actualizăm și culoarea de fundal
+            setBackgroundColor(currentVariety.bgColor);
+        }, 300); // Așteptăm completarea tranziției de orientare
+    }
+
     // Adaugă animație de fade-in pentru imagine la încărcare
     pizzaImage.style.opacity = '0';
     setTimeout(() => {
         pizzaImage.style.transition = 'opacity 1s ease';
         pizzaImage.style.opacity = '1';
     }, 100);
-    
+
     // Funcție pentru ajustarea poziției butonului de săgeată pe ecrane mici
     function adjustArrowButtonPosition() {
         if (window.innerWidth <= 576) {
@@ -561,6 +602,19 @@ document.addEventListener('DOMContentLoaded', function() {
             arrowBtn.style.bottom = 'auto';
             arrowBtn.style.left = 'auto';
             arrowBtn.style.transform = 'translateY(-50%)';
+        }
+    }
+
+    // Detectăm dacă suntem pe un dispozitiv touch pentru a optimiza interacțiunile
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+
+    // Dacă este un dispozitiv touch, adăugăm o clasă specială pentru optimizări CSS
+    if (isTouchDevice) {
+        document.body.classList.add('touch-device');
+        
+        // Optimizăm raza cercului pentru telefoane în orientare portrait
+        if (window.innerHeight > window.innerWidth) {
+            positionPizzaNames(); // Repoziționăm pentru dispozitivele touch în mod portrait
         }
     }
 }); 

@@ -561,17 +561,156 @@
 /* Adăugăm o media query pentru telefoanele foarte mici */
 @media screen and (max-width: 375px) {
     .pizza-selector-container {
-        height: 350px;
+        height: 330px;
     }
     
     .pizza-image, .pizza-outer-circle {
-        width: 220px;
-        height: 220px;
+        width: 200px;
+        height: 200px;
     }
     
     .pizza-name {
         font-size: 10px;
         padding: 3px 7px;
-        max-width: 80px;
+        max-width: 75px;
+        /* Îmbunătățim vizibilitatea pe ecrane mici */
+        background-color: rgba(0, 0, 0, 0.8);
+        opacity: 0.9;
+    }
+    
+    .pizza-name.active {
+        font-size: 11px;
+        /* Mai multă umbră pentru a evidenția butonul activ */
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    }
+    
+    /* Reducem dimensiunea textului pentru animațiile de rotație */
+    .reveal-text-rotate {
+        font-size: 0.9em;
+    }
+
+    /* Facem prețul mai compact */
+    .price-text-slide {
+        padding: 6px 14px;
+        font-size: 0.9em;
+    }
+}
+
+/* Adăugăm o media query pentru dispozitive super-mici (sub 320px) */
+@media screen and (max-width: 320px) {
+    .pizza-selector-container {
+        height: 300px;
+    }
+    
+    .pizza-image, .pizza-outer-circle {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .pizza-name {
+        font-size: 9px;
+        padding: 3px 6px;
+        max-width: 70px;
+        border-radius: 12px;
+    }
+    
+    .pizza-name.active {
+        font-size: 10px;
+    }
+    
+    .arrow-btn button {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    
+    /* Ajustăm și spațiul din descriere */
+    .section-title p {
+        min-height: 400px; /* Asigură spațiu suficient pentru descrierea pizzei */
+    }
+    
+    /* Facem textul rotativ mai mic */
+    .reveal-text-rotate {
+        font-size: 0.85em;
+    }
+}
+
+/* Ajustăm responsiv modul în care butonul săgeată e afișat pe diferite dispozitive */
+@media screen and (max-width: 576px) {
+    .arrow-btn {
+        right: auto;
+        top: auto;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .arrow-btn button {
+        transform: rotate(90deg); /* Orientăm săgeata în jos */
+    }
+    
+    .arrow-btn button:hover {
+        transform: rotate(90deg) translateY(-3px);
+    }
+}
+
+/* Îmbunătățim tranziția pentru hover pe mobile */
+@media (hover: none) {
+    .pizza-name:hover {
+        transform: translate(-50%, -50%); /* Dezactivează efectul hover de mărire pe dispozitive touch */
+        background-color: rgba(0, 0, 0, 0.6); /* Păstrează culoarea originală */
+    }
+    
+    .pizza-name.active {
+        transform: translate(-50%, -50%) scale(1.05); /* Păstrează efectul doar pentru elementul activ */
+    }
+    
+    .price-text-slide:hover {
+        transform: none; /* Dezactivează efectul hover pentru preț pe dispozitive touch */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Păstrează umbra originală */
+    }
+}
+
+/* Optimizăm pentru rotirea dispozitivelor (landscape mode) */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .pizza-selector-container {
+        height: 80vh;
+    }
+    
+    .pizza-image, .pizza-outer-circle {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section-title p {
+        font-size: 0.9rem;
+        min-height: 220px; /* Ajustare pentru modul landscape */
+    }
+    
+    .dynamic-description {
+        gap: 10px;
+    }
+}
+
+/* Îmbunătățim experiența pe iPad și dispozitive similare */
+@media screen and (min-width: 768px) and (max-width: 991px) and (min-height: 768px) {
+    .pizza-selector-container {
+        height: 550px;
+    }
+    
+    .pizza-image, .pizza-outer-circle {
+        width: 380px;
+        height: 380px;
+    }
+    
+    /* Ajustăm pentru o vizibilitate mai bună a butoanelor de pizza */
+    .pizza-name {
+        font-size: 13px;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 5px 12px;
     }
 } 

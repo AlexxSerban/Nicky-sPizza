@@ -22,6 +22,253 @@
     opacity: 0;
 }
 
+/* Animații pentru efecte text */
+.typewriter {
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+    border-right: 3px solid;
+    width: 0;
+    animation: typing 1.2s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+    border-color: var(--red, #ca0017);
+    will-change: width, border-color;
+}
+
+/* Variație alternativă pentru typewriter cu direcție inversă */
+.typewriter-reverse {
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+    width: 100%;
+    border-left: 3px solid;
+    animation: typing-reverse 1.2s steps(40, end) forwards, blink-caret-left 0.75s step-end infinite;
+    border-color: var(--dark-green, #376e4e);
+    will-change: width, margin-left, border-color;
+}
+
+.typewriter-delay-1, .typewriter-reverse-delay-1 {
+    animation-delay: 0.2s;
+}
+
+.typewriter-delay-2, .typewriter-reverse-delay-2 {
+    animation-delay: 0.5s;
+}
+
+.typewriter-delay-3, .typewriter-reverse-delay-3 {
+    animation-delay: 0.8s;
+}
+
+.typewriter-container {
+    overflow: hidden;
+}
+
+/* Efecte de apariție text */
+.reveal-text {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: revealText 0.8s ease forwards;
+    will-change: opacity, transform;
+}
+
+.reveal-text-side {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: revealTextSide 0.8s ease forwards;
+    will-change: opacity, transform;
+}
+
+/* Efecte speciale pentru animația Speck e Tartufo pe care o vom folosi pentru toate pizzele */
+.reveal-text-rotate {
+    opacity: 0;
+    transform: rotateX(90deg);
+    transform-origin: top;
+    animation: revealTextRotate 1s ease forwards;
+    will-change: opacity, transform;
+    backface-visibility: hidden; /* Îmbunătățește performanța pentru transformări 3D */
+    perspective: 1000px; /* Adaugă profunzime pentru efectele 3D */
+    display: block; /* Asigură că elementul ocupă toată lățimea disponibilă */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Adaugă umbră pentru text pentru vizibilitate mai bună */
+}
+
+.reveal-text-rotate-delay-1 {
+    animation-delay: 0.2s;
+}
+
+.reveal-text-rotate-delay-2 {
+    animation-delay: 0.6s;
+}
+
+.reveal-text-rotate-delay-3 {
+    animation-delay: 1s;
+}
+
+.reveal-text-delay-1, .reveal-text-side-delay-1, .reveal-text-rotate-delay-1 {
+    animation-delay: 0.2s;
+}
+
+.reveal-text-delay-2, .reveal-text-side-delay-2, .reveal-text-rotate-delay-2 {
+    animation-delay: 0.5s;
+}
+
+.reveal-text-delay-3, .reveal-text-side-delay-3, .reveal-text-rotate-delay-3 {
+    animation-delay: 0.8s;
+}
+
+/* Animații pentru prețuri */
+.price-text-bounce {
+    animation: bounce 1s ease forwards;
+    animation-delay: 0.8s;
+    opacity: 0;
+    will-change: opacity, transform;
+    display: inline-block; /* Necesar pentru animații de transformare */
+    background-color: rgba(202, 0, 23, 0.9);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.price-text-zoom {
+    animation: zoom 1s ease forwards;
+    animation-delay: 0.8s;
+    opacity: 0;
+    will-change: opacity, transform;
+    display: inline-block;
+    background-color: rgba(55, 110, 78, 0.9);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Animație specială pentru preț - utilizată pentru toate pizzele */
+.price-text-slide {
+    animation: slide 1s ease forwards;
+    animation-delay: 1s;
+    opacity: 0;
+    will-change: opacity, transform;
+    display: inline-block;
+    background-color: rgba(202, 0, 23, 0.9);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 1.1em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.5px;
+    transition: transform 0.3s ease;
+}
+
+.price-text-slide:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Keyframes pentru animații */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes typing-reverse {
+    from { width: 100%; margin-left: 0; }
+    to { width: 0; margin-left: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--red, #ca0017); }
+}
+
+@keyframes blink-caret-left {
+    from, to { border-color: transparent }
+    50% { border-color: var(--dark-green, #376e4e); }
+}
+
+@keyframes revealText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes revealTextSide {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes revealTextRotate {
+    0% {
+        opacity: 0;
+        transform: rotateX(90deg);
+    }
+    30% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
+
+@keyframes bounce {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+    75% { transform: scale(0.95); opacity: 0.9; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes zoom {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slide {
+    0% { 
+        transform: translateX(50px); 
+        opacity: 0; 
+    }
+    20% {
+        opacity: 0.5;
+    }
+    70% {
+        transform: translateX(-5px);
+    }
+    100% { 
+        transform: translateX(0); 
+        opacity: 1; 
+    }
+}
+
+/* Optimizare pentru secțiunea de descriere */
+.dynamic-description {
+    animation: fadeIn 0.4s ease forwards;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 5px 0;
+}
+
+/* Asigură-te că toate animațiile finalizează în starea dorită */
+.typewriter, .typewriter-reverse,
+.reveal-text, .reveal-text-side, .reveal-text-rotate,
+.price-text-bounce, .price-text-zoom, .price-text-slide {
+    animation-fill-mode: forwards;
+}
+
 .pizza-slider {
     position: relative; /* Schimbat din absolute pentru o mai bună poziționare */
     width: 100%;
@@ -134,22 +381,6 @@
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     background-color: rgba(255, 255, 255, 0.3);
-}
-
-/* Animații pentru tranzițiile textului */
-.dynamic-description {
-    animation: fadeIn 0.4s ease forwards;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* Pizza selector circle decorations */

@@ -315,32 +315,57 @@ document.addEventListener('DOMContentLoaded', function() {
             const heading = sectionTitle.querySelector('h2');
             const description = sectionTitle.querySelector('p');
             
+            // Determinăm stilul de animație pentru Speck e Tartufo
+            // Vom folosi aceeași animație pentru toate tipurile de pizza
+            const speckTartufoStyle = 2; // Forțăm același stil pentru toate varietățile (reveal-text-rotate)
+            
             if (heading) {
                 // Actualizează titlul cu numele pizzei
-                heading.textContent = variety.name.toUpperCase();
-                
                 // Adaugă un efect de tranziție fade
                 heading.style.opacity = '0';
+                
+                // Curățăm orice animație anterioară
+                heading.innerHTML = '';
+                
                 setTimeout(() => {
+                    // Folosim animația de rotație pentru toate tipurile de pizza (ca la Speck e Tartufo)
+                    heading.innerHTML = `<span class="reveal-text-rotate">${variety.name.toUpperCase()}</span>`;
+                    
                     heading.style.opacity = '1';
-                }, 50);
+                    
+                    // Forțăm un reflow pentru a ne asigura că animațiile pornesc din nou
+                    heading.offsetHeight;
+                }, 300);
             }
             
             if (description) {
-                // Actualizează descrierea cu descrierea, ingredientele și prețul
-                description.innerHTML = `
-                    <div class="dynamic-description">
-                        <div class="description-text">${variety.description}</div>
-                        <div class="ingredients-text"><strong>Ingrediente:</strong> ${variety.ingredients}</div>
-                        <div class="price-text">${variety.price}</div>
-                    </div>
-                `;
-                
                 // Adaugă efect de tranziție fade
                 description.style.opacity = '0';
+                
+                // Curățăm orice animație anterioară
+                description.innerHTML = '';
+                
                 setTimeout(() => {
+                    // Folosim aceeași animație ca pentru Speck e Tartufo pentru toate varietățile
+                    const revealClass = 'reveal-text-rotate';
+                    const priceClass = 'price-text-slide';
+                    
+                    // Formatăm prețul pentru a fi evidențiat mai bine
+                    const formattedPrice = variety.price;
+                    
+                    // Actualizează descrierea cu efectul de reveal progresiv selectat
+                    description.innerHTML = `
+                        <div class="dynamic-description">
+                            <div class="${revealClass} ${revealClass}-delay-1">${variety.description}</div>
+                            <div class="${revealClass} ${revealClass}-delay-2"><strong>Ingrediente:</strong> ${variety.ingredients}</div>
+                            <div class="${priceClass}">${formattedPrice}</div>
+                        </div>
+                    `;
                     description.style.opacity = '1';
-                }, 50);
+                    
+                    // Forțăm un reflow pentru a ne asigura că animațiile se aplică corect
+                    description.offsetHeight;
+                }, 300);
             }
         }
     }
@@ -361,79 +386,121 @@ document.addEventListener('DOMContentLoaded', function() {
         return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
     }
     
-    // Selectează o varietate de pizza
+    // Funcție pentru a aplica o tranziție mai interesantă imaginii de pizza
+    function applyPizzaImageTransition() {
+        pizzaImage.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+        pizzaImage.style.opacity = '0';
+        pizzaImage.style.transform = 'scale(0.8) rotate(-30deg)';
+
+        setTimeout(() => {
+            pizzaImage.style.opacity = '1';
+            pizzaImage.style.transform = 'scale(1) rotate(0deg)';
+        }, 700);
+    }
+
+    // Modificăm funcția selectPizzaVariety pentru a include tranziția imaginii
     function selectPizzaVariety(index) {
         // Verifică dacă indexul este valid
         if (index < 0 || index >= pizzaVarieties.length) {
             return;
         }
-        
+
+        // Verifică dacă este aceeași pizza selectată - prevenim reclicul pe același buton
+        if (index === currentIndex) {
+            return;
+        }
+
+        // Resetăm orice animație în curs
+        resetAnimations();
+
         // Obține varietatea
         const variety = pizzaVarieties[index];
-        
-        // Actualizează imaginea
-        pizzaImage.style.opacity = '0';
-        pizzaImage.style.transform = 'rotate(-20deg)';
-        
+
+        // Aplicăm tranziția imaginii de pizza
+        applyPizzaImageTransition();
+
         // Actualizează titlul secțiunii și descrierea
         updateSectionTitle(variety);
-        
+
         // Tranziție pentru titlu și descriere
         const sectionTitle = menuSection.querySelector('.section-title');
         if (sectionTitle) {
             const heading = sectionTitle.querySelector('h2');
             const description = sectionTitle.querySelector('p');
-            
+
             // Adăugăm o clasă pentru animație de ieșire
             if (heading) heading.classList.add('text-exit');
             if (description) description.classList.add('text-exit');
         }
-        
+
         // Tranziție de rotație pentru imagine
         setTimeout(() => {
             // Actualizează indexul current
             currentIndex = index;
-            
+
             // Actualizează imaginea
             pizzaImage.src = variety.image;
-            
+
             // Actualizează culoarea de fundal
             setBackgroundColor(variety.bgColor);
-            
+
             // Elimina clasa active de pe toate numele de pizza
             pizzaNames.forEach(name => {
                 name.classList.remove('active');
                 name.style.backgroundColor = 'rgba(0, 0, 0, 0.6)'; // Resetăm culoarea la cea implicită
                 name.style.boxShadow = '0 3px 10px rgba(0, 0, 0, 0.2)'; // Resetăm umbra la cea implicită
             });
-            
+
             // Adaugă clasa active la numele de pizza selectat
             pizzaNames[index].classList.add('active');
-            
+
             // Aplicăm culorile bazate pe fundal
             const isRedBackground = variety.bgColor === '#ca0017';
             pizzaNames[index].style.backgroundColor = isRedBackground ? 
                 'rgba(55, 110, 78, 0.9)' : 'rgba(202, 0, 23, 0.9)'; // Verde sau Roșu
-            
+
             // Actualizăm și umbra pentru a se potrivi cu noua culoare
             pizzaNames[index].style.boxShadow = isRedBackground ? 
                 '0 5px 15px rgba(55, 110, 78, 0.4)' : '0 5px 15px rgba(202, 0, 23, 0.4)';
-            
+
             // Tranziție pentru reapariția imaginii
             setTimeout(() => {
                 pizzaImage.style.opacity = '1';
-                pizzaImage.style.transform = 'rotate(0deg)';
-                
+                pizzaImage.style.transform = 'scale(1) rotate(0deg)';
+
                 // Animație pentru intrarea textului după ce imaginea a început să se rotească
                 if (sectionTitle) {
                     const heading = sectionTitle.querySelector('h2');
                     const description = sectionTitle.querySelector('p');
-                    
+
                     if (heading) heading.classList.remove('text-exit');
                     if (description) description.classList.remove('text-exit');
                 }
             }, 50);
         }, 300);
+    }
+    
+    // Funcție pentru resetarea animațiilor
+    function resetAnimations() {
+        // Curățăm orice stil sau animație precedentă
+        const sectionTitle = menuSection.querySelector('.section-title');
+        if (sectionTitle) {
+            const heading = sectionTitle.querySelector('h2');
+            const description = sectionTitle.querySelector('p');
+            
+            // Resetăm stilurile pentru a permite reanimarea
+            if (heading) {
+                heading.classList.remove('text-exit');
+                // Forțăm repictarea DOM pentru a asigura că animațiile se resetează
+                void heading.offsetHeight;
+            }
+            
+            if (description) {
+                description.classList.remove('text-exit');
+                // Forțăm repictarea DOM pentru a asigura că animațiile se resetează
+                void description.offsetHeight;
+            }
+        }
     }
     
     // Event listener pentru butonul săgeată

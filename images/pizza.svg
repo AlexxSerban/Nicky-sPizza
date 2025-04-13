@@ -1,0 +1,19 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" fill="#111111"/>
+  <circle cx="200" cy="200" r="150" fill="#773322" fill-opacity="0.2"/>
+  <circle cx="200" cy="200" r="130" fill="#E33B24" fill-opacity="0.2"/>
+  <circle cx="200" cy="200" r="110" fill="#F9A825" fill-opacity="0.3"/>
+  <circle cx="200" cy="200" r="100" fill="#F9A825"/>
+  <circle cx="200" cy="200" r="90" fill="#FFD54F"/>
+  <circle cx="140" cy="160" r="15" fill="#E33B24"/>
+  <circle cx="180" cy="140" r="15" fill="#E33B24"/>
+  <circle cx="220" cy="150" r="15" fill="#E33B24"/>
+  <circle cx="250" cy="180" r="15" fill="#E33B24"/>
+  <circle cx="230" cy="220" r="15" fill="#E33B24"/>
+  <circle cx="170" cy="240" r="15" fill="#E33B24"/>
+  <circle cx="150" cy="190" r="15" fill="#E33B24"/>
+  <circle cx="170" cy="170" r="10" fill="#6D4C41"/>
+  <circle cx="210" cy="180" r="10" fill="#6D4C41"/>
+  <circle cx="190" cy="220" r="10" fill="#6D4C41"/>
+  <circle cx="150" cy="230" r="10" fill="#6D4C41"/>
+</svg> 

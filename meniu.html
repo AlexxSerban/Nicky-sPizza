@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meniu - Nicky's Pizza & Panini</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu-page.css">
+    <link rel="stylesheet" href="css/pizza-selector.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="menu-page-header">
+            <!-- Navbar -->
+            <nav class="navbar">
+                <div class="content-container">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="images/logoNicky's.png" alt="Nicky's Pizza & Panini">
+                        </a>
+                    </div>
+                    <div class="nav-links">
+                        <ul>
+                            <li><a href="meniu.html" class="active">MENIU</a></li>
+                            <li><a href="index.html#despre-noi">DESPRE NOI</a></li>
+                            <li><a href="index.html#bucatar-sef">BUCĂTAR ȘEF</a></li>
+                            <li><a href="index.html#reviews">RECENZII</a></li>
+                            <li><a href="index.html#contact">CONTACT</a></li>
+                        </ul>
+                    </div>
+                    <div class="contact-button">
+                        <a href="tel:0721234567" class="phone-number"><img src="images/phone-icon.svg" alt="Telefon"> 0721 234 567</a>
+                        <a href="#comanda" class="order-button">COMANDĂ ACUM</a>
+                    </div>
+                </div>
+            </nav>
+            
+            <!-- Menu Page Title -->
+            <div class="menu-page-title">
+                <div class="content-container">
+                    <h1>MENIUL NOSTRU</h1>
+                    <p>Bucură-te de preparatele noastre autentice, realizate din ingrediente proaspete și de calitate.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Navigation -->
+        <div class="menu-navigation">
+            <div class="content-container">
+                <ul class="menu-nav-tabs">
+                    <li><a href="#pizza" class="active">Pizza</a></li>
+                    <li><a href="#panini">Panini</a></li>
+                    <li><a href="#salate">Salate</a></li>
+                    <li><a href="#paste">Paste</a></li>
+                    <li><a href="#deserturi">Deserturi</a></li>
+                    <li><a href="#bauturi">Băuturi</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Pizza Section -->
+        <section class="menu-content pizza-section" id="pizza">
+            <div class="content-container">
+                <div class="section-title">
+                    <h2>PIZZA</h2>
+                    <p>Pizza noastră este preparată după rețete autentice napoletane, pe vatră, cu aluat fermentat lent timp de 24 de ore.</p>
+                </div>
+                
+                <!-- Pizza Selector Wheel -->
+                <div class="pizza-selector-container">
+                    <div class="pizza-slider">
+                        <div class="pizza-names">
+                            <span class="pizza-name">Diavola</span>
+                            <span class="pizza-name">Prosciutto e Rucola</span>
+                            <span class="pizza-name">Maiale e Cipolle</span>
+                            <span class="pizza-name">Bianca</span>
+                            <span class="pizza-name">Margherita</span>
+                            <span class="pizza-name">Cotto e Funghi</span>
+                            <span class="pizza-name active">Speck e Tartufo</span>
+                        </div>
+
+                        <div class="pizza-outer-circle"></div>
+                        
+                        <div class="pizza-image">
+                            <img src="images/pizzaSpeckTartufo.png" alt="Pizza">
+                        </div>
+
+                        <div class="arrow-btn">
+                            <button><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Panini Section -->
+        <section class="menu-content panini-section" id="panini">
+            <div class="content-container">
+                <div class="section-title">
+                    <h2>PANINI</h2>
+                    <p>Sandviciurile noastre sunt preparate cu pâine artizanală coaptă zilnic și umplute cu cele mai bune ingrediente.</p>
+                </div>
+                
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/paninoPorchetta.png" alt="Panino Porchetta">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>Panino Porchetta</h3>
+                                <span class="price">34 Lei</span>
+                            </div>
+                            <p class="ingredients">Porchetta, rucola, roșii cherry, sos de trufe, pâine ciabatta artizanală</p>
+                            <div class="add-to-cart">
+                                <a href="#" class="order-button-small">Adaugă în coș</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/paninoCrudoEBufalla.png" alt="Panino Prosciutto Crudo">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>Panino Prosciutto Crudo</h3>
+                                <span class="price">36 Lei</span>
+                            </div>
+                            <p class="ingredients">Prosciutto crudo, mozzarella di bufala, rucola, ulei de măsline extravirgin, pâine ciabatta artizanală</p>
+                            <div class="add-to-cart">
+                                <a href="#" class="order-button-small">Adaugă în coș</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/paninoCottoEBufala.png" alt="Panino Cotto e Bufala">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>Panino Cotto e Bufala</h3>
+                                <span class="price">32 Lei</span>
+                            </div>
+                            <p class="ingredients">Șuncă artizanală, mozzarella di bufala, frunze de salată, sos de muștar și miere, pâine ciabatta</p>
+                            <div class="add-to-cart">
+                                <a href="#" class="order-button-small">Adaugă în coș</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/paninoCaprese.png" alt="Panino Caprese">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>Panino Caprese</h3>
+                                <span class="price">30 Lei</span>
+                            </div>
+                            <p class="ingredients">Mozzarella proaspătă, roșii coapte, busuioc, pesto de busuioc, ulei de măsline, pâine ciabatta</p>
+                            <div class="add-to-cart">
+                                <a href="#" class="order-button-small">Adaugă în coș</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Salate Section -->
+        <section class="menu-content salate-section" id="salate">
+            <div class="content-container">
+                <div class="section-title">
+                    <h2>SALATE</h2>
+                    <p>Salatele noastre sunt preparate cu ingrediente proaspete de sezon, cu uleiuri presate la rece și dressinguri homemade.</p>
+                </div>
+                
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/salad.svg" alt="Salată Caesar">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>Salată Caesar</h3>
+                                <span class="price">32 Lei</span>
+                            </div>
+                            <p class="ingredients">Salată romană, piept de pui la grătar, crutoane, parmezan, dressing Caesar, anchois</p>
+                            <div class="add-to-cart">
+                                <a href="#" class="order-button-small">Adaugă în coș</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/salad.svg" alt="Salată Caprese">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>Salată Caprese</h3>
+                                <span class="price">28 Lei</span>
+                            </div>
+                            <p class="ingredients">Roșii, mozzarella di bufala, busuioc proaspăt, ulei de măsline extravirgin, reducție de balsamic</p>
+                            <div class="add-to-cart">
+                                <a href="#" class="order-button-small">Adaugă în coș</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/salad.svg" alt="Salată Mediteraneană">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>Salată Mediteraneană</h3>
+                                <span class="price">30 Lei</span>
+                            </div>
+                            <p class="ingredients">Mix de salate, roșii cherry, castraveți, măsline Kalamata, brânză feta, ceapă roșie, ardei, oregano, ulei de măsline</p>
+                            <div class="add-to-cart">
+                                <a href="#" class="order-button-small">Adaugă în coș</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Paste Section -->
+        <section class="menu-content paste-section" id="paste">
+            <div class="content-container">
+                <div class="section-title">
+                    <h2>PASTE</h2>
+                    <p>Paste proaspete, preparate după rețete autentice italiene, cu sosuri și ingrediente de cea mai bună calitate.</p>
+                </div>
+                
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/pizza.svg" alt="Pasta Carbonara">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>Pasta Carbonara</h3>
+                                <span class="price">34 Lei</span>
+                            </div>
+                            <p class="ingredients">Spaghetti, guanciale, ou, pecorino romano, piper negru proaspăt măcinat</p>
+                            <div class="add-to-cart">
+                                <a href="#" class="order-button-small">Adaugă în coș</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/pizza.svg" alt="Tagliatelle ai Funghi Porcini">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>Tagliatelle ai Funghi Porcini</h3>
+                                <span class="price">36 Lei</span>
+                            </div>
+                            <p class="ingredients">Tagliatelle proaspete, ciuperci porcini, smântână, parmezan, usturoi, pătrunjel</p>
+                            <div class="add-to-cart">
+                                <a href="#" class="order-button-small">Adaugă în coș</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/pizza.svg" alt="Lasagna alla Bolognese">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>Lasagna alla Bolognese</h3>
+                                <span class="price">38 Lei</span>
+                            </div>
+                            <p class="ingredients">Foi de lasagna, ragu de vită, sos bechamel, parmezan, mozzarella</p>
+                            <div class="add-to-cart">
+                                <a href="#" class="order-button-small">Adaugă în coș</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/pizza.svg" alt="Penne all'Arrabbiata">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>Penne all'Arrabbiata</h3>
+                                <span class="price">30 Lei</span>
+                            </div>
+                            <p class="ingredients">Penne, sos de roșii, ardei iute, usturoi, pătrunjel, parmezan</p>
+                            <div class="add-to-cart">
+                                <a href="#" class="order-button-small">Adaugă în coș</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Deserturi Section -->
+        <section class="menu-content deserturi-section" id="deserturi">
+            <div class="content-container">
+                <div class="section-title">
+                    <h2>DESERTURI</h2>
+                    <p>Deserturi artizanale preparate zilnic în bucătăria noastră, pentru a vă răsfăța papilele gustative.</p>
+                </div>
+                
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/pizzaNutella.png" alt="Pizza Nutella">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>Pizza Nutella</h3>
+                                <span class="price">28 Lei</span>
+                            </div>
+                            <p class="ingredients">Aluat de pizza, Nutella, banane, fructe de pădure, zahăr pudră</p>
+                            <div class="add-to-cart">
+                                <a href="#" class="order-button-small">Adaugă în coș</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/dessert.svg" alt="Tiramisu">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>Tiramisu</h3>
+                                <span class="price">22 Lei</span>
+                            </div>
+                            <p class="ingredients">Pișcoturi înmuiate în cafea, cremă de mascarpone, cacao, amaretto</p>
+                            <div class="add-to-cart">
+                                <a href="#" class="order-button-small">Adaugă în coș</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/dessert.svg" alt="Panna Cotta">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>Panna Cotta</h3>
+                                <span class="price">20 Lei</span>
+                            </div>
+                            <p class="ingredients">Cremă de vanilie, sos de fructe de pădure, fructe proaspete</p>
+                            <div class="add-to-cart">
+                                <a href="#" class="order-button-small">Adaugă în coș</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Băuturi Section -->
+        <section class="menu-content bauturi-section" id="bauturi">
+            <div class="content-container">
+                <div class="section-title">
+                    <h2>BĂUTURI</h2>
+                    <p>Selecție variată de băuturi răcoritoare, vinuri italienești, bere artizanală și cafea premium.</p>
+                </div>
+                
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/drink.svg" alt="Vin Roșu">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>Chianti Classico</h3>
+                                <span class="price">120 Lei</span>
+                            </div>
+                            <p class="ingredients">Vin roșu sec, corp mediu, arome de cireșe negre și afine, tanini moderați, 750ml</p>
+                            <div class="add-to-cart">
+                                <a href="#" class="order-button-small">Adaugă în coș</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/drink.svg" alt="Bere Artizanală">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>Peroni Nastro Azzurro</h3>
+                                <span class="price">15 Lei</span>
+                            </div>
+                            <p class="ingredients">Bere italiană premium, stil lager, ușor amăruie cu note de citrice, 330ml</p>
+                            <div class="add-to-cart">
+                                <a href="#" class="order-button-small">Adaugă în coș</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/drink.svg" alt="Limonadă">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>Limonadă cu Mentă</h3>
+                                <span class="price">14 Lei</span>
+                            </div>
+                            <p class="ingredients">Limonadă proaspătă preparată în casă, cu suc de lămâie, mentă proaspătă și sirop de zahăr, 400ml</p>
+                            <div class="add-to-cart">
+                                <a href="#" class="order-button-small">Adaugă în coș</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/drink.svg" alt="Espresso">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>Espresso Italian</h3>
+                                <span class="price">8 Lei</span>
+                            </div>
+                            <p class="ingredients">Cafea 100% Arabica, prăjire medie, arome intense de ciocolată și nuci, 30ml</p>
+                            <div class="add-to-cart">
+                                <a href="#" class="order-button-small">Adaugă în coș</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="footer-section">
+            <div class="footer-top">
+                <div class="content-container">
+                    <div class="footer-columns">
+                        <div class="footer-column logo-column">
+                            <img src="images/logoNicky's.png" alt="Nicky's Pizza & Panini" class="footer-logo">
+                            <p class="footer-tagline">Mai mult decât pizza - o experiență culinară autentică!</p>
+                            <div class="social-icons">
+                                <a href="https://facebook.com/" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://instagram.com/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://twitter.com/" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="footer-column info-column">
+                            <h3 class="footer-heading">PROGRAM</h3>
+                            <ul class="footer-list">
+                                <li>Luni - Joi: 10:30 - 22:00</li>
+                                <li>Vineri - Sâmbătă: 10:30 - 23:00</li>
+                                <li>Duminică: 11:00 - 22:00</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-column links-column">
+                            <h3 class="footer-heading">LINKURI RAPIDE</h3>
+                            <ul class="footer-list">
+                                <li><a href="meniu.html">Meniu</a></li>
+                                <li><a href="index.html#despre-noi">Despre Noi</a></li>
+                                <li><a href="index.html#bucatar-sef">Bucătarul Șef</a></li>
+                                <li><a href="index.html#reviews">Recenzii</a></li>
+                                <li><a href="index.html#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-column contact-column">
+                            <h3 class="footer-heading">CONTACT</h3>
+                            <ul class="footer-list contact-list">
+                                <li>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Strada Dorobanți 21, București</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-phone"></i>
+                                    <span><a href="tel:0721234567">0721 234 567</a></span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-envelope"></i>
+                                    <span><a href="mailto:contact@nickyspizza.ro">contact@nickyspizza.ro</a></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="content-container">
+                    <p class="copyright">© 2023 Nicky's Pizza & Panini. Toate drepturile rezervate.</p>
+                    <div class="footer-links">
+                        <a href="#">Termeni și Condiții</a>
+                        <span class="divider">|</span>
+                        <a href="#">Politica de Confidențialitate</a>
+                        <span class="divider">|</span>
+                        <a href="#">Politica de Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/menu.js"></script>
+    <script src="js/pizza-selector.js"></script>
+</body>
+</html> 

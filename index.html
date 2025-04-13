@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicky's Pizza & Panini</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="hero-section-wrapper">
+            <!-- Navbar -->
+            <nav class="navbar">
+                <div class="content-container">
+                    <div class="logo">
+                        <img src="images/logoNicky's.png" alt="Nicky's Pizza & Panini">
+                    </div>
+                    <div class="nav-links">
+                        <ul>
+                            <li><a href="meniu.html">MENIU</a></li>
+                            <li><a href="#despre-noi">DESPRE NOI</a></li>
+                            <li><a href="#bucatar-sef">BUCĂTAR ȘEF</a></li>
+                            <li><a href="#reviews">RECENZII</a></li>
+                            <li><a href="#contact">CONTACT</a></li>
+                        </ul>
+                    </div>
+                    <div class="contact-button">
+                        <a href="tel:204-810-7368" class="phone-number"><img src="images/phone-icon.svg" alt="Telefon"> 204-810 7368</a>
+                        <a href="#comanda" class="order-button">COMANDĂ ACUM</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="content-container">
+                    <div class="hero-content">
+                        <h1>MAI MULT <br>DECÂT <span>PIZZA</span></h1>
+                        <p>Meniul nostru are ceva pentru toată lumea. Vino<br>pentru o gustare rapidă sau comandă<br>livrare direct la ușa ta.</p>
+                        <a href="#comanda" class="order-button-large">COMANDĂ ACUM</a>
+                    </div>
+                    <div class="hero-image">
+                        <img src="images/pizzaSpeckTartufo.png" alt="Pizza delicioasă cu broccoli și pui">
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Menu Categories Section -->
+        <section class="menu-categories" id="meniu">
+            <div class="content-container">
+                <div class="categories-heading">
+                    <h2>DESCOPERĂ MENIUL NOSTRU</h2>
+                </div>
+                <div class="categories-slider">
+                    <button class="slider-arrow prev-arrow"><i class="fas fa-chevron-left"></i></button>
+                    
+                    <div class="category-cards">
+                        <div class="category-card">
+                            <div class="category-image">
+                                <img src="images/salad.svg" alt="Salate delicioase">
+                            </div>
+                            <div class="category-content">
+                                <h3>SALATE <span>DELICIOASE</span></h3>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-image">
+                                <img src="images/pizza.svg" alt="Pizza făcută manual">
+                            </div>
+                            <div class="category-content">
+                                <h3>PIZZA <span>ARTIZANALĂ</span></h3>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-image">
+                                <img src="images/dessert.svg" alt="Deserturi gustoase">
+                            </div>
+                            <div class="category-content">
+                                <h3>DESERTURI <span>GUSTOASE</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="slider-arrow next-arrow"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                
+                <div class="slider-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quality Section -->
+        <section class="quality-section" id="despre-noi">
+            <div class="content-container">
+                <div class="quality-content">
+                    <div class="quality-text">
+                        <h3>ANGAJAMENTUL NOSTRU PENTRU CALITATE</h3>
+                        <h2>CEA MAI BUNĂ<br>PIZZA DIN ORAȘ!</h2>
+                        <p>La Nicky's, suntem pasionați de pizza. Folosim doar cele mai proaspete ingrediente, procurate local ori de câte ori este posibil. Aluatul nostru este preparat zilnic, iar sosul folosește roșii culese la maturitate deplină. Fiecare pizza este preparată manual cu grijă și atenție la detalii. Aceasta este diferența pe care o vei simți în fiecare mușcătură.</p>
+                        <a href="#comanda" class="order-button-large">COMANDĂ ACUM</a>
+                        <div class="quality-btn-secondary">
+                            <a href="meniu.html">VEZI MENIUL</a>
+                        </div>
+                    </div>
+                    <div class="quality-image">
+                        <div class="pizza-dough">
+                            <img src="images/promisiuneDeCalitate.png" alt="Blat de pizza" class="circle-img">
+                            <div class="quality-badge">
+                                <span>PROMISIUNEA<br>NOASTRĂ DE <strong>CALITATE</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Panini Section -->
+        <section class="panini-section">
+            <div class="content-container">
+                <div class="panini-content">
+                    <div class="panini-image">
+                        <div class="panini-plate">
+                            <img src="images/paninoPorchetta.png" alt="Panini delicios" class="panini-img">
+                        </div>
+                    </div>
+                    <div class="panini-text">
+                        <h3>SUNTEM MAI MULT DECÂT O PIZZERIE!</h3>
+                        <h2>NU AI CHEF<br>DE <span>PIZZA?</span></h2>
+                        <h4>ÎNCEARCĂ UNUL DINTRE PANINI NOȘTRI <span>LA COMANDĂ!</span></h4>
+                        <p>Încearcă pâinea noastră artizanală. Ingrediente atent selecționate — o aromă deosebită. Convenabil pentru prânz la pachet și satisfacție garantată. Ideal pentru o masă rapidă în timpul pauzei sau pentru un prânz în oraș. Cu noi, gustul e la superlativ.</p>
+                        <div class="panini-buttons">
+                            <a href="#comanda" class="order-button-large">COMANDĂ ACUM</a>
+                            <a href="meniu.html" class="menu-button">VEZI MENIUL</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catering Section -->
+        <section class="catering-section" id="catering">
+            <div class="content-container">
+                <div class="catering-content">
+                    <div class="catering-decoration catering-pizza-top">
+                        <img src="images/pizza.svg" alt="Pizza" class="pizza-image">
+                    </div>
+                    <div class="catering-decoration catering-salad-left">
+                        <img src="images/salad.svg" alt="Salată" class="salad-image">
+                    </div>
+                    <div class="catering-text">
+                        <h2>TREBUIE SĂ HRĂNEȘTI UN GRUP MARE?</h2>
+                        <h3>NOI TE PUTEM <span>AJUTA.</span></h3>
+                        <p class="catering-notice">COMANDĂ CU 24 ORE ÎNAINTE PENTRU SERVICII DE CATERING</p>
+                        <p class="catering-details">Lasă Nicky's să facă următoarea ta întâlnire, petrecere sau eveniment special memorabil cu pizza delicioasă, panini și garnituri pe care toată lumea le va aprecia. Contactează-ne astăzi pentru a discuta despre nevoile tale de catering.</p>
+                        <a href="#contact" class="order-button-large">AFLĂ MAI MULTE</a>
+                    </div>
+                    <div class="catering-decoration catering-pizza-right">
+                        <img src="images/pizza.svg" alt="Pizza" class="pizza-image">
+                    </div>
+                    <div class="catering-decoration catering-dessert-bottom">
+                        <img src="images/dessert.svg" alt="Desert" class="dessert-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chef Section -->
+        <section class="chef-section" id="bucatar-sef">
+            <div class="content-container">
+                <div class="chef-content">
+                    <div class="chef-image">
+                        <img src="images/chef-portrait.png" alt="Chef Nicky Lombardi">
+                        <div class="chef-badge">
+                            <span>PASIUNE<br>PENTRU <strong>EXCELENȚĂ</strong></span>
+                        </div>
+                    </div>
+                    <div class="chef-text">
+                        <h3>MAESTRUL DIN SPATELE REȚETELOR NOASTRE</h3>
+                        <h2>CHEF<br><span>Lucian Axinte</span></h2>
+                        <p>Italienii îl vor, românii însă au nevoie de el.</p>
+                        <p>Lucian este un maestru al aromelor și un poet desăvârșit al aluatului. Absolvent al "Accademia Pizzaioli", acesta a dezvoltat o adevărată pasiune pentru arta pizzei tradiționale napoletane, ce s-a transformat într-o combinație rar-întâlnită de gusturi unice și arome diferite, puse pe un aluat care acum este perfect, după mulți ani de muncă, testat și căutare. Dragostea pentru acest preparat nu a putut fi păstrată doar pentru el iar așa a luat naștere Nicky's Pizza.</p>
+                        <div class="chef-quote">
+                            <blockquote>"Pizza nu este doar mâncare, este o formă de artă și o modalitate de a aduce oamenii împreună."</blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section class="reviews-section" id="reviews">
+            <div class="content-container">
+                <div class="reviews-heading">
+                    <h3>CE SPUN CLIENȚII NOȘTRI</h3>
+                    <h2>SINGURA PIZZERIE DIN BUCUREȘTI<br>CU <span>5 STELE</span> PE GOOGLE</h2>
+                    <div class="rating-badge">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="rating">5.0</div>
+                        <div class="review-count">din peste 250 de recenzii</div>
+                    </div>
+                </div>
+                
+                <div class="reviews-slider">
+                    <button class="slider-arrow prev-arrow"><i class="fas fa-chevron-left"></i></button>
+                    
+                    <div class="reviews-container">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <img src="images/profile1.png" alt="Ana Popescu" class="reviewer-img">
+                                <div class="reviewer-info">
+                                    <h4>Ana Popescu</h4>
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="review-text">"Cea mai bună pizza din București, fără îndoială! Blatul este perfect - crocant la exterior și pufos în interior. Ingredientele sunt proaspete și de calitate. Serviciul este excelent și atmosfera este primitoare. Recomand cu încredere!"</p>
+                        </div>
+                        
+                        <div class="review-card">
+                            <div class="review-header">
+                                <img src="images/profile2.png" alt="Mihai Ionescu" class="reviewer-img">
+                                <div class="reviewer-info">
+                                    <h4>Mihai Ionescu</h4>
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="review-text">"Am comandat pizza lor de mai multe ori și niciodată nu m-au dezamăgit. Sosul de roșii este pur și simplu divin, iar Chef Nicky știe cu adevărat cum să combine ingredientele pentru a crea arome uimitoare. De fiecare dată când am prieteni în vizită, comandăm de aici."</p>
+                        </div>
+                        
+                        <div class="review-card">
+                            <div class="review-header">
+                                <img src="images/profile3.png" alt="Elena Dumitrescu" class="reviewer-img">
+                                <div class="reviewer-info">
+                                    <h4>Elena Dumitrescu</h4>
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="review-text">"Panini-urile lor sunt la fel de bune ca pizza! Ingrediente premium, pâine proaspătă și combinații de arome care te fac să revii mereu. Personalul este amabil și servirea rapidă. O experiență culinară autentică italiană în inima Bucureștiului."</p>
+                        </div>
+                    </div>
+                    
+                    <button class="slider-arrow next-arrow"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                
+                <div class="reviews-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                
+                <div class="google-cta">
+                    <a href="https://g.page/r/nickys-pizza" target="_blank" class="google-button">
+                        <i class="fab fa-google"></i> VEZI TOATE RECENZIILE
+                    </a>
+                    <p class="verified-badge"><i class="fas fa-check-circle"></i> Recenzii verificate de Google</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Locations Section -->
+        <section class="locations-section" id="contact">
+            <div class="content-container">
+                <div class="location-card">
+                    <div class="location-info">
+                        <h2>PINEVILLE</h2>
+                        <p class="location-address">
+                            10450 PARK RD.<br>
+                            CHARLOTTE, NC 28210<br>
+                            704 837 4050
+                        </p>
+                        <div class="location-hours">
+                            <p class="hours-group">
+                                <span class="days">DUMINICĂ — JOI</span><br>
+                                <span class="time">10:30 AM TO 9:00 PM</span>
+                            </p>
+                            <p class="hours-group">
+                                <span class="days">VINERI — SÂMBĂTĂ</span><br>
+                                <span class="time">10:30 AM TO 10:00 PM</span>
+                            </p>
+                        </div>
+                        <a href="#contact-us" class="contact-btn">CONTACTEAZĂ-NE</a>
+                    </div>
+                    <div class="location-gallery">
+                        <div class="gallery-grid">
+                            <div class="gallery-item large-item">
+                                <img src="images/pizza-hand.jpg" alt="Pizza în mână">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="images/pizza-slice.jpg" alt="Felie de pizza">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="images/dough.jpg" alt="Aluat de pizza">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="images/ingredients.jpg" alt="Ingrediente proaspete">
+                            </div>
+                            <div class="gallery-item large-item">
+                                <img src="images/pizza-board.jpg" alt="Pizza pe platou">
+                            </div>
+                        </div>
+                        <div class="social-media">
+                            <a href="https://instagram.com/" class="instagram-link">@nickys_pizza</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="footer-section">
+            <div class="footer-top">
+                <div class="content-container">
+                    <div class="footer-columns">
+                        <div class="footer-column logo-column">
+                            <img src="images/logoNicky's.png" alt="Nicky's Pizza & Panini" class="footer-logo">
+                            <p class="footer-tagline">Mai mult decât pizza - o experiență culinară autentică!</p>
+                            <div class="social-icons">
+                                <a href="https://facebook.com/" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://instagram.com/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://twitter.com/" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="footer-column info-column">
+                            <h3 class="footer-heading">PROGRAM</h3>
+                            <ul class="footer-list">
+                                <li>Luni - Joi: 10:30 - 22:00</li>
+                                <li>Vineri - Sâmbătă: 10:30 - 23:00</li>
+                                <li>Duminică: 11:00 - 22:00</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-column links-column">
+                            <h3 class="footer-heading">LINKURI RAPIDE</h3>
+                            <ul class="footer-list">
+                                <li><a href="#meniu">Meniu</a></li>
+                                <li><a href="#despre-noi">Despre Noi</a></li>
+                                <li><a href="#bucatar-sef">Bucătarul Șef</a></li>
+                                <li><a href="#reviews">Recenzii</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-column contact-column">
+                            <h3 class="footer-heading">CONTACT</h3>
+                            <ul class="footer-list contact-list">
+                                <li>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Strada Dorobanți 21, București</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-phone"></i>
+                                    <span><a href="tel:0721234567">0721 234 567</a></span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-envelope"></i>
+                                    <span><a href="mailto:contact@nickyspizza.ro">contact@nickyspizza.ro</a></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="content-container">
+                    <p class="copyright">© 2023 Nicky's Pizza & Panini. Toate drepturile rezervate.</p>
+                    <div class="footer-links">
+                        <a href="#">Termeni și Condiții</a>
+                        <span class="divider">|</span>
+                        <a href="#">Politica de Confidențialitate</a>
+                        <span class="divider">|</span>
+                        <a href="#">Politica de Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/slider.js"></script>
+</body>
+</html> 

@@ -1,0 +1,346 @@
+/* Pizza Selector Wheel Styles */
+.pizza-selector-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0 40px; /* Adăugat padding jos pentru a crea mai mult spațiu */
+    height: 600px; /* Mărit înălțimea containerului pentru a permite centrarea pizzei */
+    overflow: visible; /* Permite vizibilitatea completă a pizzei */
+}
+
+/* Stiluri pentru tranziții text */
+.section-title h2, 
+.section-title p {
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.section-title h2.text-exit, 
+.section-title p.text-exit {
+    transform: translateY(-20px);
+    opacity: 0;
+}
+
+.pizza-slider {
+    position: relative; /* Schimbat din absolute pentru o mai bună poziționare */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrat pe verticală */
+    align-items: center; /* Centrat pe orizontală */
+}
+
+.pizza-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrat perfect */
+    width: 500px;
+    height: 500px;
+    z-index: 2;
+    /* Adăugăm un halo subțire în jurul pizzei pentru a o evidenția */
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+.pizza-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease-in-out, opacity 0.3s ease;
+    transform-origin: center center;
+}
+
+.pizza-names {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    pointer-events: none; /* Permite click-urile prin container */
+}
+
+.pizza-name {
+    position: absolute;
+    white-space: nowrap;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    letter-spacing: 0.5px; /* Redus pentru a economisi spațiu */
+    font-size: 14px; /* Redus pentru a economisi spațiu */
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    z-index: 3;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.6); /* Întunecat puțin pentru contrast mai bun */
+    backdrop-filter: blur(5px);
+    padding: 5px 10px; /* Redus padding pentru butoane mai compacte */
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    pointer-events: auto; /* Reactivează evenimentele de click pentru buton */
+}
+
+.pizza-name:hover {
+    background-color: rgba(202, 0, 23, 0.8);
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+.pizza-name.active {
+    font-weight: 700;
+    font-size: 16px;
+    background-color: rgba(202, 0, 23, 0.9);
+    box-shadow: 0 5px 15px rgba(202, 0, 23, 0.4);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* Eliminăm punctul alb care apărea lângă butonul activ */
+.pizza-name.active::before {
+    display: none;
+}
+
+.arrow-btn {
+    position: absolute;
+    top: 50%; /* Poziționat în centru */
+    right: 30px;
+    transform: translateY(-50%); /* Centrat pe verticală */
+    z-index: 5;
+}
+
+.arrow-btn button {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.arrow-btn button i {
+    color: white;
+}
+
+.arrow-btn button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Animații pentru tranzițiile textului */
+.dynamic-description {
+    animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pizza selector circle decorations */
+.pizza-outer-circle {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    bottom: auto; /* Eliminăm bottom fix */
+    top: 50%; /* Poziționăm în centrul containerului */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrat perfect */
+    z-index: 1;
+}
+
+.pizza-info-panel {
+    position: absolute;
+    right: 30px;
+    top: 30px; /* Moved to top of container */
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.pizza-info-panel h3 {
+    font-size: 24px;
+    color: var(--dark-green);
+    margin-bottom: 10px;
+}
+
+.pizza-info-panel .price {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--red);
+    margin-bottom: 15px;
+}
+
+.pizza-info-panel .ingredients {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.pizza-info-panel .order-button-small {
+    background-color: var(--red);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.pizza-info-panel .order-button-small:hover {
+    background-color: #c72f1a;
+    transform: translateY(-2px);
+}
+
+@media screen and (max-width: 1350px) {
+    .pizza-image, .pizza-outer-circle {
+        width: 550px;
+        height: 550px;
+        bottom: -220px;
+    }
+    
+    .arrow-btn {
+        bottom: 220px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .pizza-selector-container {
+        height: 550px;
+    }
+    
+    .pizza-image, .pizza-outer-circle {
+        width: 450px;
+        height: 450px;
+    }
+    
+    .pizza-name {
+        font-size: 13px;
+    }
+    
+    .pizza-name.active {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .pizza-selector-container {
+        height: 500px;
+    }
+    
+    .pizza-image, .pizza-outer-circle {
+        width: 400px;
+        height: 400px;
+    }
+    
+    .pizza-name {
+        font-size: 12px;
+        padding: 4px 8px;
+        border-radius: 15px;
+    }
+    
+    .pizza-name.active {
+        font-size: 14px;
+    }
+    
+    .arrow-btn button {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pizza-selector-container {
+        height: 450px;
+    }
+    
+    .pizza-image, .pizza-outer-circle {
+        width: 320px;
+        height: 320px;
+    }
+    
+    .pizza-name {
+        font-size: 12px;
+        padding: 4px 8px;
+        /* Reducem opacity când nu sunt active pentru a face pizza mai vizibilă */
+        opacity: 0.8;
+        /* Creștem ușor spațiul alb pentru mai mult contrast */
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    
+    .pizza-name.active {
+        font-size: 14px;
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .pizza-selector-container {
+        height: 380px;
+    }
+    
+    .pizza-image, .pizza-outer-circle {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .pizza-name {
+        font-size: 11px;
+        padding: 4px 8px;
+        /* Facem butoanele mai compacte */
+        white-space: normal;
+        max-width: 90px;
+        text-align: center;
+        line-height: 1.2;
+        min-height: 20px;
+        border-radius: 15px;
+    }
+    
+    .pizza-name.active {
+        font-size: 12px;
+        /* Culoarea se va schimba dinamic prin JavaScript */
+    }
+}
+
+/* Adăugăm o media query pentru telefoanele foarte mici */
+@media screen and (max-width: 375px) {
+    .pizza-selector-container {
+        height: 350px;
+    }
+    
+    .pizza-image, .pizza-outer-circle {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .pizza-name {
+        font-size: 10px;
+        padding: 3px 7px;
+        max-width: 80px;
+    }
+} 

@@ -1,0 +1,371 @@
+/* Menu Page Specific Styles */
+.menu-page-header {
+    background: url('../images/heroBackground.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.menu-page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+    z-index: 1;
+}
+
+.menu-page-header > * {
+    position: relative;
+    z-index: 2;
+}
+
+.menu-page-title {
+    padding: 100px 0 120px;
+    text-align: center;
+    color: white;
+}
+
+.menu-page-title h1 {
+    font-size: 64px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.menu-page-title p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Menu Navigation */
+.menu-navigation {
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.menu-nav-tabs {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-x: auto;
+}
+
+.menu-nav-tabs li {
+    margin: 0;
+}
+
+.menu-nav-tabs a {
+    display: block;
+    padding: 20px 30px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+.menu-nav-tabs a:hover {
+    color: var(--red);
+}
+
+.menu-nav-tabs a.active {
+    color: var(--red);
+}
+
+.menu-nav-tabs a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    width: 40%;
+    height: 3px;
+    background-color: var(--red);
+}
+
+/* Menu Content */
+.menu-content {
+    padding: 60px 0;
+    background-color: var(--cream-bg);
+    scroll-margin-top: 80px;
+}
+
+/* Specific section styles */
+.pizza-section {
+    background-color: var(--cream-bg);
+    /* Setarea inițială va fi suprinscrisă de JavaScript cu culorile roșu/verde */
+}
+
+.panini-section {
+    background-color: #f5f3e9; /* O nuanță ușor diferită de crem pentru contrast */
+}
+
+.bauturi-section {
+    background-color: #f0f5f2; /* O nuanță ușor verzuie pentru secțiunea de băuturi */
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    color: var(--dark-green);
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    transition: opacity 0.5s ease, color 0.8s ease;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--red);
+    transition: background-color 0.8s ease;
+}
+
+.section-title p {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
+    min-height: 200px; /* Înălțime minimă pentru a preveni sărituri de layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Stiluri pentru descriere dinamică în secțiunea pizza */
+.dynamic-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.description-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-style: italic;
+    max-width: 700px;
+}
+
+.ingredients-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    max-width: 700px;
+}
+
+.price-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: rgba(202, 0, 23, 0.85);
+    padding: 8px 20px;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+/* Animații pentru textele care se schimbă */
+.text-exit {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Menu Items */
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.menu-item {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item-image {
+    flex: 0 0 140px;
+    background-color: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.menu-item-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.menu-item-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.menu-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.menu-item-header h3 {
+    font-size: 20px;
+    color: #333;
+    margin: 0;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--red);
+}
+
+.ingredients {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.order-button-small {
+    background-color: var(--red);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.order-button-small:hover {
+    background-color: #c72f1a;
+    transform: translateY(-2px);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 992px) {
+    .menu-items {
+        grid-template-columns: 1fr;
+    }
+    
+    .menu-page-title h1 {
+        font-size: 48px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu-nav-tabs {
+        justify-content: flex-start;
+        padding: 0 20px;
+    }
+    
+    .menu-nav-tabs a {
+        padding: 15px 20px;
+    }
+    
+    .menu-page-title {
+        padding: 80px 0 100px;
+    }
+    
+    .menu-page-title h1 {
+        font-size: 40px;
+    }
+    
+    .menu-page-title p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .menu-item {
+        flex-direction: column;
+    }
+    
+    .menu-item-image {
+        flex: 0 0 auto;
+        height: 120px;
+    }
+    
+    .menu-page-title {
+        padding: 60px 0 80px;
+    }
+    
+    .menu-page-title h1 {
+        font-size: 32px;
+    }
+    
+    .section-title h2 {
+        font-size: 28px;
+    }
+}
+
+/* Media queries pentru responsivitate */
+@media (max-width: 991px) {
+    .section-title p {
+        min-height: 240px;
+    }
+    
+    .description-text {
+        font-size: 1rem;
+    }
+    
+    .ingredients-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-title p {
+        min-height: 300px;
+    }
+    
+    .description-text,
+    .ingredients-text {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 575px) {
+    .section-title p {
+        min-height: 350px;
+    }
+} 

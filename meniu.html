@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/menu-page.css">
     <link rel="stylesheet" href="css/pizza-selector.css">
+    <link rel="stylesheet" href="css/updated-pizza-slider.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -45,83 +46,66 @@
                     </button>
                 </div>
             </nav>
-            
-            <!-- Mobile Menu Overlay -->
-            <div class="mobile-menu-overlay">
-                <button class="mobile-menu-close" aria-label="Închide">
-                    <i class="fas fa-times"></i>
-                </button>
-                <div class="mobile-menu-content">
-                    <div class="nav-links">
-                        <ul>
-                            <li><a href="meniu.html" class="active">MENIU</a></li>
-                            <li><a href="index.html#despre-noi">DESPRE NOI</a></li>
-                            <li><a href="index.html#bucatar-sef">BUCĂTAR ȘEF</a></li>
-                            <li><a href="index.html#reviews">RECENZII</a></li>
-                            <li><a href="index.html#contact">CONTACT</a></li>
-                        </ul>
-                    </div>
-                    <div class="contact-button">
-                        <a href="tel:0721234567" class="phone-number"><img src="images/phone-icon.svg" alt="Telefon"> 0721 234 567</a>
-                        <a href="#comanda" class="order-button">COMANDĂ ACUM</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Menu Page Title -->
-            <div class="menu-page-title">
-                <div class="content-container">
-                    <h1>MENIUL NOSTRU</h1>
-                    <p>Bucură-te de preparatele noastre autentice, realizate din ingrediente proaspete și de calitate.</p>
-                </div>
-            </div>
-        </div>
 
-        <!-- Menu Navigation -->
-        <div class="menu-navigation">
-            <div class="content-container">
-                <ul class="menu-nav-tabs">
-                    <li><a href="#pizza" class="active">Pizza</a></li>
-                    <li><a href="#panini">Panini</a></li>
-                    <li><a href="#salate">Salate</a></li>
-                    <li><a href="#paste">Paste</a></li>
-                    <li><a href="#deserturi">Deserturi</a></li>
-                    <li><a href="#bauturi">Băuturi</a></li>
-                </ul>
-            </div>
         </div>
 
         <!-- Pizza Section -->
         <section class="menu-content pizza-section" id="pizza">
-            <div class="content-container">
-                <div class="section-title">
-                    <h2>PIZZA</h2>
-                    <p>Pizza noastră este preparată după rețete autentice napoletane, pe vatră, cu aluat fermentat lent timp de 24 de ore.</p>
-                </div>
-                
-                <!-- Pizza Selector Wheel -->
-                <div class="pizza-selector-container">
-                    <div class="pizza-slider">
-                        <div class="pizza-names">
-                            <span class="pizza-name">Diavola</span>
-                            <span class="pizza-name">Prosciutto e Rucola</span>
-                            <span class="pizza-name">Maiale e Cipolle</span>
-                            <span class="pizza-name">Bianca</span>
-                            <span class="pizza-name">Margherita</span>
-                            <span class="pizza-name">Cotto e Funghi</span>
-                            <span class="pizza-name active">Speck e Tartufo</span>
+            <!-- Pizza Slider - full width -->
+            <div class="urban-oven-slider full-slider">
+                <div class="pizza-slider-container">
+                    <div class="nav-arrow left-arrow">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    
+                    <div class="pizza-display">
+                        <div class="pizza-decoration">
+                            <div class="circle-decoration tomato-circle">
+                                <img src="images/tomato-slice.png" alt="Tomato">
+                            </div>
+                            <div class="circle-decoration basil-circle">
+                                <img src="images/basil-leaf.png" alt="Basil">
+                            </div>
+                            <div class="circle-decoration onion-circle">
+                                <img src="images/onion-slice.png" alt="Onion">
+                            </div>
                         </div>
-
-                        <div class="pizza-outer-circle"></div>
                         
-                        <div class="pizza-image">
-                            <img src="images/pizzaSpeckTartufo.png" alt="Pizza">
-                        </div>
-
-                        <div class="arrow-btn">
-                            <button><i class="fas fa-chevron-right"></i></button>
+                        <div class="pizza-image-container">
+                            <div class="pizza-outer-ring"></div>
+                            <div class="pizza-image">
+                                <img id="current-pizza-image" src="images/pizzaDiavola.png" alt="Pizza Diavola">
+                            </div>
+                            <div class="pizza-name-overlay">
+                                <h2>Diavola</h2>
+                            </div>
                         </div>
                     </div>
+                    
+                    <div class="nav-arrow right-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+                
+                <div class="view-details-container">
+                    <button class="view-details-btn">
+                        <span>View Details</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+                
+                <!-- Adăugăm butoane de selecție directă a pizzei -->
+                <div class="pizza-selection-buttons">
+                    <button class="pizza-select-btn active" data-index="0">Diavola</button>
+                    <button class="pizza-select-btn" data-index="1">Margherita</button>
+                    <button class="pizza-select-btn" data-index="2">Cinque Formaggi</button>
+                    <button class="pizza-select-btn" data-index="3">Prosciutto e Rucolla</button>
+                    <button class="pizza-select-btn" data-index="4">Bianca</button>
+                    <button class="pizza-select-btn" data-index="5">Maiale e Cipolle</button>
+                    <button class="pizza-select-btn" data-index="6">Mortadella</button>
+                    <button class="pizza-select-btn" data-index="7">Cotto e Funghi</button>
+                    <button class="pizza-select-btn" data-index="8">Speck Tartufo</button>
+                    <button class="pizza-select-btn" data-index="9">Nutella</button>
                 </div>
             </div>
         </section>
@@ -545,9 +529,31 @@
         </footer>
     </div>
 
+    <!-- Pizza Details Modal -->
+    <div class="pizza-details-modal">
+        <div class="modal-content">
+            <div class="close-modal">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="modal-pizza-details">
+                <h2 class="modal-pizza-name">Diavola</h2>
+                <div class="modal-pizza-image">
+                    <img src="images/pizzaDiavola.png" alt="Pizza Diavola">
+                </div>
+                <div class="modal-pizza-info">
+                    <div class="modal-pizza-description">
+                        Pizza picantă cu salamuri italiene picante, ardei iute și mozzarella fină.
+                    </div>
+                    <div class="modal-pizza-price">36 Lei</div>
+                    <button class="modal-order-btn">Adaugă în coș</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!-- Scripts -->
-    <script src="js/slider.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/pizza-selector.js"></script>
+    <script src="js/urban-oven-slider.js"></script>
 </body>
 </html> 

@@ -1,0 +1,750 @@
+/* Pizza Slider Styles (Updated version) */
+.urban-oven-slider {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    background-image: url('../images/dark-texture.png');
+    background-size: cover;
+    border-radius: 0; /* Eliminat raza pentru a ocupa tot spațiul */
+    box-shadow: none; /* Eliminat umbra */
+}
+
+/* Full width slider style */
+.full-slider {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ajustări pentru slider-ul de mărime completă */
+.full-slider .pizza-slider-container {
+    height: 90vh;  /* Utilizează 90% din înălțimea vizibilă a ecranului */
+    min-height: 700px; /* Asigură o înălțime minimă pe ecrane mici */
+    padding: 30px 60px;
+}
+
+/* Pizza slider container - ajustări globale */
+.pizza-slider-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    height: 90vh; /* Înălțime bazată pe viewport pentru toate dimensiunile */
+    min-height: 700px;
+}
+
+.full-slider .pizza-image-container {
+    width: 60vh;  /* Dimensiune proporțională cu înălțimea ecranului */
+    height: 60vh;
+    max-width: 600px;
+    max-height: 600px;
+}
+
+.full-slider .pizza-name-overlay h2 {
+    font-size: 110px;  /* Text mai mare */
+    letter-spacing: 1px;
+}
+
+.full-slider .circle-decoration {
+    width: 150px;  /* Cercuri decorative mai mari */
+    height: 150px;
+}
+
+.full-slider .tomato-circle {
+    top: 70px;
+    left: 120px;
+}
+
+.full-slider .basil-circle {
+    top: 70px;
+    right: 120px;
+}
+
+.full-slider .onion-circle {
+    bottom: 70px;
+    right: 170px;
+}
+
+.full-slider .nav-arrow {
+    width: 60px;  /* Butoane de navigare mai mari */
+    height: 60px;
+}
+
+.full-slider .nav-arrow i {
+    font-size: 24px;
+}
+
+.full-slider .view-details-btn {
+    font-size: 18px;
+    padding: 15px;
+}
+
+/* Ajustări responsive pentru slider-ul complet */
+@media screen and (max-width: 1200px) {
+    .full-slider .pizza-slider-container {
+        height: 550px;
+    }
+    
+    .full-slider .pizza-image-container {
+        width: 450px;
+        height: 450px;
+    }
+    
+    .full-slider .pizza-name-overlay h2 {
+        font-size: 75px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .full-slider .pizza-slider-container {
+        height: 500px;
+    }
+    
+    .full-slider .pizza-image-container {
+        width: 400px;
+        height: 400px;
+    }
+    
+    .full-slider .pizza-name-overlay h2 {
+        font-size: 65px;
+    }
+    
+    .full-slider .circle-decoration {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .full-slider .pizza-slider-container {
+        height: 450px;
+        padding: 20px 30px;
+    }
+    
+    .full-slider .pizza-image-container {
+        width: 320px;
+        height: 320px;
+    }
+    
+    .full-slider .pizza-name-overlay h2 {
+        font-size: 50px;
+    }
+    
+    .full-slider .circle-decoration {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .full-slider .nav-arrow {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .full-slider .pizza-slider-container {
+        height: 380px;
+    }
+    
+    .full-slider .pizza-image-container {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .full-slider .pizza-name-overlay h2 {
+        font-size: 40px;
+    }
+    
+    .full-slider .circle-decoration {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .full-slider .nav-arrow {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Navigation arrows */
+.nav-arrow {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.nav-arrow i {
+    color: white;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.nav-arrow:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+.left-arrow:hover i {
+    transform: translateX(-3px);
+}
+
+.right-arrow:hover i {
+    transform: translateX(3px);
+}
+
+/* Pizza display area */
+.pizza-display {
+    flex: 1;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Decorative circles */
+.pizza-decoration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.circle-decoration {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-color: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: float 5s ease-in-out infinite;
+}
+
+.circle-decoration img {
+    width: 60%;
+    height: auto;
+    object-fit: contain;
+}
+
+.tomato-circle {
+    top: 50px;
+    left: 100px;
+    animation-delay: 0s;
+}
+
+.basil-circle {
+    top: 50px;
+    right: 100px;
+    animation-delay: 1.5s;
+}
+
+.onion-circle {
+    bottom: 50px;
+    right: 150px;
+    animation-delay: 3s;
+}
+
+/* Animation for floating circles */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Pizza image container */
+.pizza-image-container {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    z-index: 2;
+}
+
+.pizza-outer-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+.pizza-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pizza-image img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+    transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+.pizza-image img.pizza-rotate {
+    animation: rotateIn 0.8s ease-in-out;
+}
+
+@keyframes rotateIn {
+    0% {
+        transform: rotate(-20deg) scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.pizza-image:hover img {
+    transform: rotate(5deg) scale(1.05);
+}
+
+/* Pizza name overlay */
+.pizza-name-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.pizza-name-overlay h2 {
+    font-size: 72px;
+    font-weight: 800;
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    transform: rotate(-5deg);
+    transition: opacity 0.3s ease;
+}
+
+.pizza-name-overlay h2.name-appear {
+    animation: nameAppear 0.5s ease-out;
+}
+
+@keyframes nameAppear {
+    0% {
+        transform: scale(0.8) rotate(-10deg);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) rotate(-5deg);
+        opacity: 1;
+    }
+}
+
+/* View details button */
+.view-details-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px; /* Mai mult spațiu jos */
+    position: relative;
+    z-index: 5; /* Asigură că este deasupra elementului roșu */
+}
+
+.view-details-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px;
+    transition: transform 0.3s ease;
+}
+
+.view-details-btn span {
+    margin-bottom: 5px;
+}
+
+.view-details-btn i {
+    font-size: 14px;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-5px);
+    }
+    60% {
+        transform: translateY(-3px);
+    }
+}
+
+.view-details-btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Secțiunea red accent bottom - mărită și mai mult pentru a crea o tranziție mai frumoasă */
+.urban-oven-slider::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 45%; /* Mărită și mai mult */
+    background-color: #e22e24;
+    clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%); /* Unghi mai abrupt */
+    z-index: 1;
+}
+
+/* Make sure content is above the red accent */
+.pizza-slider-container, .view-details-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Pizza details modal styling */
+.pizza-details-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.pizza-details-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: white;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 15px;
+    padding: 30px;
+    position: relative;
+    transform: translateY(50px);
+    transition: transform 0.5s ease;
+}
+
+.pizza-details-modal.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-pizza-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.modal-pizza-name {
+    font-size: 36px;
+    font-weight: 700;
+    color: #e22e24;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.modal-pizza-image {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 20px;
+}
+
+.modal-pizza-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.modal-pizza-info {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.modal-pizza-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.modal-pizza-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #e22e24;
+    margin-bottom: 20px;
+}
+
+.modal-order-btn {
+    background-color: #e22e24;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.modal-order-btn:hover {
+    background-color: #c72f1a;
+    transform: translateY(-3px);
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.close-modal i {
+    font-size: 24px;
+    color: #666;
+}
+
+.close-modal:hover {
+    transform: scale(1.1);
+}
+
+.close-modal:hover i {
+    color: #e22e24;
+}
+
+/* Responsive adjustments */
+@media screen and (min-width: 768px) {
+    .modal-pizza-details {
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+    }
+    
+    .modal-pizza-image {
+        margin: 0 30px 0 0;
+        flex-shrink: 0;
+    }
+    
+    .modal-pizza-info {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .pizza-image-container {
+        width: 350px;
+        height: 350px;
+    }
+    
+    .pizza-name-overlay h2 {
+        font-size: 56px;
+    }
+    
+    .circle-decoration {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .tomato-circle {
+        left: 50px;
+    }
+    
+    .basil-circle {
+        right: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pizza-slider-container {
+        height: 400px;
+        padding: 20px;
+    }
+    
+    .pizza-image-container {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .pizza-name-overlay h2 {
+        font-size: 42px;
+    }
+    
+    .circle-decoration {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .tomato-circle {
+        top: 30px;
+        left: 30px;
+    }
+    
+    .basil-circle {
+        top: 30px;
+        right: 30px;
+    }
+    
+    .onion-circle {
+        bottom: 30px;
+        right: 60px;
+    }
+    
+    .nav-arrow {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .pizza-slider-container {
+        height: 350px;
+    }
+    
+    .pizza-image-container {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .pizza-name-overlay h2 {
+        font-size: 32px;
+    }
+    
+    .circle-decoration {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .tomato-circle {
+        left: 10px;
+    }
+    
+    .basil-circle {
+        right: 10px;
+    }
+    
+    .onion-circle {
+        display: none;
+    }
+    
+    .nav-arrow {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .modal-pizza-name {
+        font-size: 28px;
+    }
+    
+    .modal-pizza-image {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .modal-pizza-description {
+        font-size: 14px;
+    }
+    
+    .modal-pizza-price {
+        font-size: 20px;
+    }
+}
+
+/* Ajustări pentru container-ul secțiunii pizza */
+.pizza-section {
+    padding: 0;
+    margin: 0;
+}
+
+.pizza-section .content-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* Elimină toate marginile și padding-ul din secțiunea pizza pentru a ocupa tot spațiul */
+.menu-content.pizza-section {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Elimină spațiile dintre secțiuni */
+.menu-content {
+    margin: 0;
+    padding: 0;
+}
+
+/* Fixare pentru meniul de navigare */
+.menu-navigation {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+/* Ajustare pentru secțiunile următoare */
+.menu-content.panini-section {
+    margin-top: 0;
+    padding-top: 40px; /* Adaugă spațiu doar la partea de sus a secțiunii Panini */
+} 

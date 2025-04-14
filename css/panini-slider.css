@@ -1,0 +1,393 @@
+/* Panini Slider - integrat cu designul Nicky's Pizza */
+
+.panini-slider-container {
+    width: 100%;
+    height: 95vh; /* Mărim înălțimea la 95% din înălțimea vizibilă a viewport-ului */
+    min-height: 750px; /* Mărim înălțimea minimă pentru mai mult spațiu */
+    position: relative;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.panini-slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    transition: transform 0.8s ease;
+}
+
+/* Layout dual cu jumătate de ecran pentru fiecare secțiune */
+.panini-slide-left {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 80px; /* Mărim padding-ul pentru mai mult spațiu */
+    position: relative;
+    box-sizing: border-box;
+    color: white;
+}
+
+.panini-slide-right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Text principal mare și impactant - ajustat după eliminarea titlului și tagline-ului */
+.panini-title {
+    font-size: 62px; /* Mărim font-size-ul pentru a compensa spațiul eliminat */
+    font-weight: 800;
+    line-height: 1.1;
+    margin-top: 40px; /* Adăugăm margin-top pentru a coborî titlul */
+    margin-bottom: 40px; /* Ajustăm spațiul de jos */
+    max-width: 90%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.panini-description {
+    font-size: 22px; /* Mărim font-size-ul pentru a ocupa mai mult spațiu */
+    line-height: 1.5;
+    margin-bottom: 50px; /* Mărim spațiul până la atribute */
+    max-width: 90%;
+    opacity: 0.9;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Secțiunea de badges de la partea inferioară - ajustată pentru mai mult spațiu */
+.panini-attributes {
+    display: flex;
+    margin-bottom: 40px; /* Mărim spațiul până la buton */
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
+    padding: 18px 0; /* Mărim padding-ul pentru mai mult spațiu */
+}
+
+.panini-attribute {
+    margin-right: 40px;
+    font-size: 18px; /* Mărim font-size-ul pentru mai multă vizibilitate */
+    font-weight: 500;
+    text-transform: capitalize;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Buton elegant similar cu stilul Nicky's Pizza - ajustat pentru mai multă vizibilitate */
+.panini-cta-button {
+    background-color: white;
+    color: #8B2A41;
+    border: none;
+    border-radius: 50px;
+    padding: 16px 45px; /* Mărim padding-ul pentru un buton mai vizibil */
+    font-size: 18px; /* Mărim font-size-ul */
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+}
+
+.panini-cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background-color: #f8f8f8;
+}
+
+/* Styling imagine panini */
+.panini-image {
+    width: auto;
+    height: auto;
+    max-width: 90%;
+    max-height: 75%;
+    object-fit: contain;
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+    z-index: 2;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
+}
+
+/* Efecte pentru imaginea de panini */
+.panini-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Stilizare pentru indicatorii de navigare și dots */
+.panini-navigation {
+    position: absolute;
+    bottom: 30px; /* Coborâm puțin pentru a lăsa mai mult spațiu */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+}
+
+.panini-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    margin: 0 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.panini-dot.active {
+    background-color: white;
+    transform: scale(1.2);
+}
+
+/* Săgeți de navigare - facem săgețile mai mari */
+.panini-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px; /* Mărim dimensiunea */
+    height: 60px; /* Mărim dimensiunea */
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.panini-arrow:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.panini-arrow-left {
+    left: 20px;
+}
+
+.panini-arrow-right {
+    right: 20px;
+}
+
+.panini-arrow i {
+    color: white;
+    font-size: 24px; /* Mărim dimensiunea iconului */
+}
+
+/* Scheme de culori pentru slidere diferite - adaptate la culorile Nicky's Pizza */
+.panini-slide.slide-1 .panini-slide-left {
+    background-color: #8B2A41; /* Bordo similar cu culorile brandului */
+}
+
+.panini-slide.slide-1 .panini-slide-right {
+    background-color: #AA6882; /* Violet care se potrivește */
+}
+
+.panini-slide.slide-2 .panini-slide-left {
+    background-color: #E94335; /* Roșu din paleta Nicky's Pizza */
+}
+
+.panini-slide.slide-2 .panini-slide-right {
+    background-color: #F08379; /* Roșu deschis complementar */
+}
+
+.panini-slide.slide-3 .panini-slide-left {
+    background-color: #333333; /* Gri închis */
+}
+
+.panini-slide.slide-3 .panini-slide-right {
+    background-color: #666666; /* Gri deschis */
+}
+
+.panini-slide.slide-4 .panini-slide-left {
+    background-color: #2A5D8B; /* Albastru închis */
+}
+
+.panini-slide.slide-4 .panini-slide-right {
+    background-color: #6892AA; /* Albastru deschis */
+}
+
+/* Efecte decorative - cercuri similare cu cele din background */
+.panini-decoration-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+    background-color: white;
+}
+
+.panini-circle-1 {
+    width: 350px; /* Măresc dimensiunea */
+    height: 350px; /* Măresc dimensiunea */
+    top: -180px; /* Ajustez poziția */
+    right: -70px; /* Ajustez poziția */
+}
+
+.panini-circle-2 {
+    width: 250px; /* Măresc dimensiunea */
+    height: 250px; /* Măresc dimensiunea */
+    bottom: -130px; /* Ajustez poziția */
+    left: 40px; /* Ajustez poziția */
+}
+
+.panini-circle-3 {
+    width: 200px; /* Măresc dimensiunea */
+    height: 200px; /* Măresc dimensiunea */
+    top: 80px;
+    right: 80px;
+}
+
+/* Responsive design - ajustăm pentru ecrane mai mici */
+@media (max-width: 992px) {
+    .panini-slider-container {
+        min-height: 650px; /* Ajustăm înălțimea minimă */
+    }
+    
+    .panini-slide-left {
+        padding: 60px; /* Reducem padding-ul dar păstrăm proporția */
+    }
+    
+    .panini-title {
+        margin-top: 20px; /* Reducem margin-top pe ecrane mai mici */
+        font-size: 52px; /* Ajustăm dimensiunea fontului, dar păstrăm-o mare */
+    }
+    
+    .panini-description {
+        font-size: 20px; /* Ajustăm dimensiunea fontului */
+        margin-bottom: 40px; /* Reducem marginea pentru ecrane mai mici */
+    }
+    
+    .panini-attribute {
+        margin-right: 25px; /* Ajustăm spațierea */
+        font-size: 16px; /* Ajustăm dimensiunea fontului */
+    }
+    
+    .panini-cta-button {
+        padding: 15px 40px; /* Reducem ușor padding-ul */
+        font-size: 16px; /* Reducem ușor dimensiunea fontului */
+    }
+}
+
+@media (max-width: 768px) {
+    .panini-slider-container {
+        height: 100vh; /* Folosim toată înălțimea disponibilă */
+        min-height: 800px; /* Mărim înălțimea minimă pentru a acomoda layout-ul stacked */
+    }
+    
+    .panini-slide {
+        flex-direction: column;
+    }
+    
+    .panini-slide-left, 
+    .panini-slide-right {
+        width: 100%;
+        height: 50%;
+    }
+    
+    .panini-slide-left {
+        padding: 30px;
+    }
+    
+    .panini-title {
+        margin-top: 10px; /* Reducem și mai mult margin-top pe tablete */
+        font-size: 38px; /* Mărim față de valoarea anterioară de 32px */
+        max-width: 100%;
+    }
+    
+    .panini-description {
+        font-size: 16px; /* Mărim față de valoarea anterioară de 14px */
+        margin-bottom: 25px;
+        max-width: 100%;
+    }
+    
+    .panini-attributes {
+        flex-wrap: wrap;
+        padding: 12px 0; /* Creștem ușor padding-ul */
+        margin-bottom: 30px; /* Ajustăm marginea pentru ecrane mai mici */
+    }
+    
+    .panini-attribute {
+        margin-right: 15px;
+        margin-bottom: 5px;
+        font-size: 14px; /* Mărim față de valoarea anterioară de 12px */
+    }
+    
+    .panini-cta-button {
+        padding: 14px 35px; /* Mărim față de valoarea anterioară */
+        font-size: 16px; /* Mărim față de valoarea anterioară de 14px */
+    }
+}
+
+@media (max-width: 576px) {
+    .panini-slider-container {
+        height: 600px;
+    }
+    
+    .panini-title {
+        margin-top: 0; /* Eliminăm complet margin-top pe telefoane */
+        font-size: 32px; /* Mărim față de valoarea anterioară de 28px */
+    }
+    
+    .panini-description {
+        font-size: 15px; /* Ajustăm dimensiunea fontului */
+        margin-bottom: 20px;
+    }
+    
+    .panini-attributes {
+        padding: 10px 0;
+        margin-bottom: 25px;
+    }
+    
+    .panini-attribute {
+        font-size: 13px;
+    }
+    
+    .panini-image {
+        max-height: 65%; /* Mărim față de valoarea anterioară de 60% */
+    }
+    
+    .panini-cta-button {
+        padding: 12px 30px;
+        font-size: 15px; /* Mărim față de valoarea anterioară */
+    }
+    
+    .panini-arrow {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .panini-arrow i {
+        font-size: 16px;
+    }
+}
+
+/* Adăugăm o tranziție mai lină la schimbarea slide-urilor */
+.panini-slide-left, .panini-slide-right {
+    transition: opacity 0.3s ease;
+}
+
+/* Asigurăm că secțiunea de panini nu are padding intern care ar putea limita slider-ul */
+.menu-content.panini-section {
+    padding: 0; /* Confirmăm eliminarea padding-ului */
+    margin: 0; /* Adăugăm și eliminarea marginii */
+    background-color: transparent; /* Eliminăm background-ul pentru a evita conflictele */
+}
+
+/* Eliminăm margin și padding pentru containerul de conținut din secțiunea panini */
+.panini-section .content-container {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+} 

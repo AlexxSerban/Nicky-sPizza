@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicky's Pizza - Panini</title>
+    
+    <!-- Font Awesome pentru iconițe -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+    
+    <!-- Stiluri principale -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Stiluri pentru panini slider -->
+    <link rel="stylesheet" href="css/panini-slider.css">
+    
+    <style>
+        /* Stiluri suplimentare pentru pagina de panini */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f9f9f9;
+        }
+        
+        .page-header {
+            background-color: #8B2A41;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .page-header p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .page-section {
+            padding: 80px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: #333;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: #8B2A41;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="page-header">
+        <h1>Descoperă Sandvișurile Noastre Artizanale</h1>
+        <p>Fiecare panino este pregătit cu ingrediente premium și pâine proaspătă, pentru o explozie de gusturi autentice italiene în fiecare mușcătură.</p>
+    </header>
+    
+    <!-- Secțiunea de Panini -->
+    <section class="page-section" id="panini-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Panini Premium</h2>
+                <p>Selectate cu grijă din cele mai fine ingrediente, sandvișurile noastre sunt perfecte pentru un prânz rapid, dar delicios.</p>
+            </div>
+            
+            <!-- Acesta este containerul pentru sliderul de panini -->
+            <div class="panini-slider-container">
+                <!-- Sliderul va fi generat în JavaScript -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer simplu -->
+    <footer style="background-color: #333; color: white; padding: 30px 20px; text-align: center;">
+        <p>© 2023 Nicky's Pizza. Toate drepturile rezervate.</p>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="js/panini-slider.js"></script>
+</body>
+</html> 

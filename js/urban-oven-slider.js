@@ -181,8 +181,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (onionCircle) {
             onionCircle.style.opacity = 0;
-            // Ajustăm animația pentru a se potrivi cu noua poziție (similar cu basilCircle dar în dreapta)
-            onionCircle.style.transform = `translate(${exitDirection * 120 * translateFactor}px, ${-100 * translateFactor}px) rotate(${exitDirection * -180}deg)`;
+            // Ajustăm animația pentru a se potrivi cu noua poziție (din partea de jos)
+            onionCircle.style.transform = `translate(${exitDirection * 120 * translateFactor}px, ${100 * translateFactor}px) rotate(${exitDirection * -180}deg)`;
         }
         
         // Tranziție pentru background
@@ -229,8 +229,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             if (onionCircle) {
-                // Ajustăm animația pentru a se potrivi cu noua poziție (similar cu basilCircle dar în dreapta)
-                onionCircle.style.transform = `translate(${enterDirection * -120 * translateFactor}px, ${-100 * translateFactor}px) rotate(${enterDirection * 180}deg)`;
+                // Ajustăm animația pentru a se potrivi cu noua poziție (intrare din partea de jos)
+                onionCircle.style.transform = `translate(${enterDirection * -120 * translateFactor}px, ${100 * translateFactor}px) rotate(${enterDirection * 180}deg)`;
             }
             
             // Ajustăm timpul pentru animația de intrare
@@ -558,14 +558,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             if (onionCircle) {
                 onionCircle.style.width = onionCircle.style.height = '160px'; // Menținem dimensiunea
-                onionCircle.style.bottom = 'auto'; // Eliminăm poziționarea de jos
-                onionCircle.style.top = '10px'; // Poziționăm în partea de sus
-                onionCircle.style.right = '10px'; // Poziționăm în dreapta, similar cu basilCircle
-                onionCircle.style.zIndex = '15'; // Z-index mai mare decât celelalte elemente (5)
+                onionCircle.style.top = 'auto'; // Eliminăm poziționarea din top
+                onionCircle.style.bottom = '10px'; // Poziționăm în partea de jos a imaginii
+                onionCircle.style.right = '10px'; // Păstrăm poziționarea în dreapta
+                onionCircle.style.zIndex = '15'; // Păstrăm z-index-ul mai mare decât celelalte elemente
                 onionCircle.style.opacity = '1';
-                onionCircle.style.boxShadow = '0 0 35px rgba(200, 150, 255, 0.9), 0 0 15px white'; // Glow mai pronunțat + contur alb
-                onionCircle.style.border = '3px solid white'; // Adăugăm bordură albă pentru vizibilitate crescută
-                onionCircle.style.transform = 'scale(1.05)'; // Ușor mărit pentru a atrage atenția
+                onionCircle.style.boxShadow = '0 0 35px rgba(200, 150, 255, 0.9), 0 0 15px white'; // Păstrăm glow-ul
+                onionCircle.style.border = '3px solid white'; // Păstrăm bordura albă
+                onionCircle.style.transform = 'scale(1.05)'; // Păstrăm mărirea ușoară
             }
         }
         
